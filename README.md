@@ -53,12 +53,22 @@ set -g allow-passthrough on
 set -g focus-events on
 ```
 
+## Options
+
+Set these with `/config` or `claude plugin configure latex-math@claude-latex-math`.
+
+| Option | Default | Meaning |
+| --- | --- | --- |
+| `color` | `auto` | Formula ink. `auto` is light gray on Claude Code's dark themes and dark gray on its light ones; a hex color such as `#adbac7` matches your terminal's text exactly |
+| `size` | `1` | Formula size relative to the default, which sits a little above terminal text at common font sizes |
+
+With ImageMagick on your `PATH`, each formula is padded to whole terminal cells, so the terminal never stretches it.
+
 ## What it does not do
 
 - Inline math (`$x^2$` inside a sentence) stays text: an image takes whole terminal rows.
 - Formulas inside code blocks stay text.
 - A formula LaTeX can't compile stays text.
-- The formula is drawn in light gray, for dark terminal themes. On a light theme it is hard to read.
 - The first render of each formula takes about a second (one `latex` run). Results are cached for the session.
 - Desktop app, VS Code extension and mobile are left untouched.
 

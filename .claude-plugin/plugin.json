@@ -2,7 +2,25 @@
   "name": "latex-math",
   "version": "0.1.0",
   "description": "Draws display LaTeX formulas ($$...$$ and \\[...\\]) as images in the Claude Code terminal (Ghostty, kitty, tmux with passthrough)",
-  "author": { "name": "Brian Pravato" },
+  "author": {
+    "name": "Brian Pravato"
+  },
   "license": "MIT",
-  "repository": "https://github.com/kbrianps/claude-latex-math"
+  "repository": "https://github.com/kbrianps/claude-latex-math",
+  "userConfig": {
+    "color": {
+      "type": "string",
+      "title": "Formula color",
+      "description": "auto picks light or dark gray for the Claude Code theme; a hex color such as #adbac7 matches your terminal's text color",
+      "default": "auto"
+    },
+    "size": {
+      "type": "number",
+      "title": "Formula size",
+      "description": "Formula size relative to the default, which is a little larger than terminal text at common font sizes",
+      "default": 1,
+      "min": 0.5,
+      "max": 2
+    }
+  }
 }
